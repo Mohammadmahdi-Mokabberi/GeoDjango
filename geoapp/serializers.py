@@ -11,15 +11,15 @@ class LocationsSeraizlier(serializers.ModelSerializer):
 
 
 class LocationDetailSerializer(serializers.ModelSerializer):
-    location_x = serializers.CharField(source='get_location_x')
-    location_y = serializers.CharField(source='get_location_y')
+    x = serializers.CharField(source='get_x')
+    y = serializers.CharField(source='get_y')
 
     class Meta:
         model = Incidences
-        fields = ['id', 'name', 'image', 'location_x', 'location_y']
+        fields = ['id', 'name', 'image', 'x', 'y']
 
 
 class CreateLocationSerializer(serializers.Serializer):
     name = serializers.CharField()
-    location_x = serializers.CharField()
-    location_y = serializers.CharField()
+    x = serializers.CharField()
+    y = serializers.CharField()

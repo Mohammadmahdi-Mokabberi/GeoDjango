@@ -53,8 +53,8 @@ class CreateLocationAPIView(generics.CreateAPIView):
             if not serializer.is_valid():
                 return Response(status=status.HTTP_400_BAD_REQUEST, data='All Fields Must Be Full')
             name = request.data['name']
-            x = request.data['location_x']
-            y = request.data['location_y']
+            x = request.data['x']
+            y = request.data['y']
             location = get_location(x=x,y=y)
             Incidences.objects.create(name=name, location=location)
             return Response(status=status.HTTP_200_OK, data='Done')
